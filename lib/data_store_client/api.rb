@@ -72,7 +72,8 @@ module DataStoreClient::Api
     result[:headers] = {
       'Accept' => "application/vnd.paid-media-v#{version}+json",
       'Content-Type' => 'application/json',
-      'X-Data-Store-Api-Key' => DataStoreClient.api_key
+      'X-Data-Store-Api-Key' => DataStoreClient.api_key,
+      'X-Data-Store-User-Id' => options.delete(:user_id)
     }
 
     result
